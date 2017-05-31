@@ -1,0 +1,51 @@
+<%= form_with(model: contact, local: true) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, class: 'label' %>
+    <%= form.text_field :name, id: :contact_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age, class: 'label' %>
+    <%= form.text_field :age, id: :contact_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, class: 'label' %>
+    <%= form.text_field :email, id: :contact_email %>
+  </div>
+
+  <%= form.fields_for :address do |address_field| %>
+    <div class="field">
+      <%= form.label :street, class: 'label' %>
+      <%= address_field.text_field :street, class: 'input' %>
+    </div>
+    <div class="field">
+      <%= form.label :cep, class: 'label' %>
+      <%= address_field.text_field :cep, class: 'input' %>
+    </div>
+    <div class="field">
+      <%= form.label :city, class: 'label' %>
+      <%= address_field.text_field :city, class: 'input' %>
+    </div>
+    <div class="field">
+      <%= form.label :state, class: 'label' %>
+      <%= address_field.text_field :state, class: 'input' %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit 'Create', class: 'button-is-success' %>
+  </div>
+<% end %>

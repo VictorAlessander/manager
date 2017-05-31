@@ -1,0 +1,22 @@
+<%= content_for :body do %>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Username:</strong>
+	  <%= @account.username %>
+	</p>
+
+	<p>
+	  <strong>Password:</strong>
+	  <%= @account.password %>
+	</p>
+
+	<p>
+	  <strong>Contact:</strong>
+	  <%= @account.contact.name %>
+	</p>
+
+	<%= link_to 'Edit', edit_account_path(@account) %> |
+	<%= link_to 'Back', accounts_path %>
+
+<% end %>
