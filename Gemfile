@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Milligram is a minimalist CSS framework. This gem packages the framework's assets for drop-in use in Rails applications.
 gem 'milligram'
+
+# A library for generating fake data such as names, phones, address...
+gem 'faker'
