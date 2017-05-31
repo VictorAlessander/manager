@@ -20,9 +20,9 @@
         <td><%= contact.name %></td>
         <td><%= contact.age %></td>
         <td><%= contact.email %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', contact, class: 'button' %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact), class: 'button' %></td>
+        <td><%= link_to 'Destroy', contact, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,6 +30,7 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'New Contact', new_contact_path, class: 'button' %>
+<%= link_to 'Back to menu', home_index_path, class: 'button' %>
 
 <% end %>

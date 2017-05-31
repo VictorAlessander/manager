@@ -27,7 +27,7 @@
     <%= @address.contact.name %>
   </p>
 
-  <%= link_to 'Edit', edit_address_path(@address) %> |
-  <%= link_to 'Back', addresses_path %>
+  <%= link_to 'Edit', edit_address_path(@address), class: 'button' %> |
+  <%= link_to 'Back', addresses_path, class: 'button' %>
 
 <% end %>

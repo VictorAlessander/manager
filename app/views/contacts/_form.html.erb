@@ -45,6 +45,24 @@
     </div>
   <% end %>
 
+  <%= form.fields_for :phone do |phone_field| %>
+    <div class="field">
+      <%= form.label :phone, class: 'field' %>
+      <%= phone_field.text_field :phone, class: 'input' %>
+    </div>
+  <% end %>
+
+  <%= form.fields_for :account do |account_field| %>
+    <div class="field">
+      <%= form.label :username, class: 'field' %>
+      <%= account_field.text_field :username, class: 'input' %>
+    </div>
+    <div class="field">
+      <%= form.label :password, class: 'field' %>
+      <%= account_field.text_field :password, class: 'input', type: 'password' %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit 'Create', class: 'button-is-success' %>
   </div>
