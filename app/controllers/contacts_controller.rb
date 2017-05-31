@@ -76,14 +76,8 @@ class ContactsController < ApplicationController
                                       :name,
                                       :age,
                                       :email,
-                                      :address_attributes[
-                                                        :street,
-                                                        :cep,
-                                                        :city,
-                                                        :state],
-                                      :phone_attributes[:phone],
-                                      :account_attributes[
-                                                        :username,
-                                                        :password])
+                                      {address_attributes: [:street, :cep, :city, :state]},
+                                      {phone_attributes: [:phone]},
+                                      {account_attributes: [:username, :password]})
     end
 end
