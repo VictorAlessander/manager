@@ -22,8 +22,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :contact_id %>
-    <%= form.text_field :contact_id, id: :account_contact_id %>
+    <%= form.label :contact_id, class: 'field' %>
+    <%= collection_select(
+                        :account,
+                        :contact_id,
+                        Contact.all,
+                        :id,
+                        :name,
+                        {},
+                        html_options={}
+                        ) %>
   </div>
 
   <div class="actions">
