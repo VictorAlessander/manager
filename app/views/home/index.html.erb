@@ -3,7 +3,20 @@
 <% end %>
 
 <%= content_for :body do %>
+	<style type="text/css">
+		.button{
+			width: 210px;
+		}
+	</style>
+
 	<div class="container">
 		<h1 align="center">Menu</h1>
+	</div>
+
+	<div class="container" align="center">
+		<%= link_to 'Contacts', :contacts, class: 'button' %><br>
+		<%= link_to 'Addresses', :addresses, class: 'button' %><br>
+		<%= link_to 'Phones', :phones, class: 'button' %><br>
+		<%= link_to 'Accounts', :accounts, class: 'button' %>
 	</div>
 <% end %>
