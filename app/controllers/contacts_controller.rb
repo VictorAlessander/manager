@@ -4,7 +4,11 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+    if params[:search]
+      @contacts = Contact.search(params[:search])
+    else
+      @contacts = Contact.all
+    end
   end
 
   # GET /contacts/1
@@ -78,6 +82,7 @@ class ContactsController < ApplicationController
                                       :email,
                                       {address_attributes: [:street, :cep, :city, :state]},
                                       {phone_attributes: [:phone]},
-                                      {account_attributes: [:username, :password]})
+                                      {account_attributes: [:username, :password]},
+                                      :search)
     end
 end
