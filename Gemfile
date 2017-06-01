@@ -60,3 +60,4 @@ gem 'milligram'
 gem 'faker'
 
 gem "rspec-rails", :group => [:development, :test]
+gem "shoulda"
