@@ -12,17 +12,20 @@ RSpec.describe Contact, type: :model do
 	end
 
 	it "is not valid without a name" do
+		subject.name = nil
 		expect(subject).to_not be_valid
 	end
 
 	it "is not valid without a age" do
-		subject.name = "Victor"
+		subject.name = Faker::Name.name
+		subject.age = nil
 		expect(subject).to_not be_valid
 	end
 
 	it "is not valid without a email" do
 		subject.name = Faker::Name.name
 		subject.age = Faker::Date.birthday
+		subject.email = nil
 		expect(subject).to_not be_valid
 	end
 end
