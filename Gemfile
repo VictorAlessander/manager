@@ -58,3 +58,5 @@ gem 'milligram'
 
 # A library for generating fake data such as names, phones, address...
 gem 'faker'
+
+gem "rspec-rails", :group => [:development, :test]
